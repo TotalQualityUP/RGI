@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RGI — Octubre 2026</title>
+<style>
+:root{
+  --bg:#f4f3ef;
+  --card:#fff;
+  --navy:#132436;
+  --ink:#16160f;
+  --ink-2:#3f3e38;
+  --ink-3:#7c7b73;
+  --rule:#e5e3dc;
+  --rule-2:#cfcdc4;
+  --accent:#2a78d6;
+  --accent-dk:#1c5cab;
+  --accent-lt:#8fc0f5;
+  --accent-soft:#eff5fd;
+  --pos:#0a6b32;
+  --neg:#c0392e;
+  --sans:"Inter","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --nav-h:52px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; background:var(--bg)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+/* ── Encabezado ─────────────────────────────────────────────────── */
+.hero{background:var(--navy); color:#fff; padding:52px 0 0}
+.hero .eyebrow{
+  margin:0 0 10px; font-size:12px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--accent-lt);
+}
+.hero h1{
+  margin:0 0 14px; font-size:clamp(32px,5vw,46px); line-height:1.08;
+  letter-spacing:-.025em; font-weight:680;
+}
+.hero .lede{margin:0 0 34px; max-width:66ch; font-size:17.5px; line-height:1.6; color:#c8d2dc}
+.hero-stats{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.16);
+}
+.hero-stats div{padding:18px 20px 24px; border-right:1px solid rgba(255,255,255,.16)}
+.hero-stats div:first-child{padding-left:0}
+.hero-stats div:last-child{border-right:0}
+.hero-stats .l{display:block; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:#9fb0bf; font-weight:600; margin-bottom:6px}
+.hero-stats .v{display:block; font-size:30px; font-weight:640; letter-spacing:-.02em; line-height:1}
+
+/* ── Navegación ─────────────────────────────────────────────────── */
+.nav{
+  position:sticky; top:0; z-index:20; height:var(--nav-h);
+  background:rgba(244,243,239,.93); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.nav .wrap{display:flex; align-items:center; gap:4px; height:100%; overflow-x:auto; scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto; display:flex; align-items:center; gap:8px;
+  padding:7px 13px; border-radius:100px; text-decoration:none;
+  font-size:13.5px; font-weight:600; color:var(--ink-2); white-space:nowrap;
+  transition:background .15s, color .15s;
+}
+.nav a .i{font-size:11px; font-weight:700; color:var(--ink-3); letter-spacing:.04em}
+.nav a:hover{background:#e9e7e0}
+.nav a.on{background:var(--accent); color:#fff}
+.nav a.on .i{color:rgba(255,255,255,.7)}
+
+/* ── Secciones ──────────────────────────────────────────────────── */
+main{padding:32px 0 8px}
+.sec{
+  background:var(--card); border:1px solid var(--rule); border-radius:12px;
+  padding:34px 40px 38px; margin-bottom:26px; scroll-margin-top:calc(var(--nav-h) + 16px);
+}
+.sec-head{display:flex; align-items:flex-start; gap:18px; margin-bottom:6px}
+.sec-num{
+  font-size:40px; font-weight:700; line-height:.9; color:#e6e4dc;
+  letter-spacing:-.03em; flex:0 0 auto; margin-top:2px;
+}
+.kicker{margin:0 0 2px; font-size:11.5px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent)}
+h2{margin:0; font-size:clamp(23px,3vw,28px); line-height:1.18; letter-spacing:-.02em; font-weight:660}
+.sec-lede{margin:10px 0 24px; max-width:90ch; font-size:17px; color:var(--ink-2)}
+
+/* ── Indicadores ────────────────────────────────────────────────── */
+.kpis{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  background:#faf9f5; border:1px solid var(--rule); border-radius:10px;
+  margin:0 0 26px; overflow:hidden;
+}
+.kpis.k3{grid-template-columns:repeat(3,1fr)}
+.kpis.k6{grid-template-columns:repeat(3,1fr)}
+.kpi{padding:15px 18px 17px; border-right:1px solid var(--rule)}
+.kpi:last-child{border-right:0}
+.kpis.k6 .kpi:nth-child(3n){border-right:0}
+.kpis.k6 .kpi:nth-child(-n+3){border-bottom:1px solid var(--rule)}
+.kpi .l{display:block; font-size:11.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:650; margin-bottom:5px; line-height:1.3; min-height:2.6em}
+.kpi .v{display:block; font-size:27px; font-weight:640; line-height:1.05; letter-spacing:-.025em}
+.kpi .v.sm{font-size:20px; letter-spacing:-.015em}
+.kpi .n{display:block; font-size:12.5px; color:var(--ink-2); margin-top:6px; line-height:1.4}
+.up{color:var(--pos)} .down{color:var(--neg)}
+
+/* ── Texto ──────────────────────────────────────────────────────── */
+.prose{max-width:none}
+.prose p{
+  margin:0 0 16px;
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+}
+.prose p:last-child{margin-bottom:0}
+.prose b{font-weight:650; color:var(--accent)}
+.sec-lede b{font-weight:650; color:var(--accent)}
+
+/* ── Tablas ─────────────────────────────────────────────────────── */
+.tables{display:grid; gap:22px; margin:26px 0 0}
+.tables.two{grid-template-columns:minmax(0,320px) minmax(0,1fr); align-items:start}
+.tbl{overflow-x:auto}
+.tbl h3{margin:0 0 9px; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:700}
+table{width:100%; border-collapse:collapse; font-size:14.5px}
+th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--rule); vertical-align:baseline}
+thead th{font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3);
+  font-weight:700; border-bottom:1px solid var(--rule-2); white-space:nowrap; padding-bottom:7px}
+td.n,th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:#faf9f5}
+tr.total td{font-weight:650; border-top:1px solid var(--rule-2); background:#faf9f5}
+tr.total:hover td{background:#f5f3ed}
+.grp{color:var(--ink-3); font-size:13px; white-space:nowrap}
+.note{margin:10px 0 0; font-size:13px; color:var(--ink-3)}
+
+/* ── Nota metodológica ──────────────────────────────────────────── */
+.nota{
+  margin:26px 0 0; padding:18px 22px; background:var(--accent-soft);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0;
+  font-size:14.5px; line-height:1.6; color:var(--ink-2); max-width:none;
+}
+.nota h3{margin:0 0 6px; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--accent-dk); font-weight:700}
+.nota p{margin:0 0 9px; text-align:justify; hyphens:auto}
+.nota p:last-child{margin:0}
+
+/* ── Slot de visualización ──────────────────────────────────────── */
+figure.viz{margin:30px 0 0}
+.viz-slot{
+  position:relative; min-height:420px; display:flex; align-items:stretch;
+  background:#faf9f5; border:1px solid var(--rule); border-radius:10px; overflow:hidden;
+}
+.viz-slot > *{max-width:100%}
+.viz-slot object,.viz-slot iframe,.viz-slot img,
+.viz-slot .tableauPlaceholder,.viz-slot tableau-viz{max-width:100%!important; width:100%!important}
+.viz-slot img{height:auto; display:block}
+.viz-slot.embed{background:#fff; padding:6px; display:block; min-height:0; overflow:hidden}
+.viz-slot.embed .tableauPlaceholder{width:100%!important; max-width:100%!important}
+.viz-ph{
+  flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; text-align:center; padding:32px; margin:10px;
+  border:1.5px dashed var(--rule-2); border-radius:6px;
+}
+.viz-ph .num{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:700; color:var(--accent)}
+.viz-ph .t{font-size:19px; font-weight:620; color:var(--ink-2); letter-spacing:-.01em}
+.viz-ph .h{font-size:14px; color:var(--ink-3); max-width:62ch; line-height:1.5}
+figcaption{margin-top:11px; font-size:13px; color:var(--ink-3); line-height:1.5; max-width:86ch}
+figcaption b{color:var(--ink-2); font-weight:650}
+
+/* ── Pie ────────────────────────────────────────────────────────── */
+footer{border-top:1px solid var(--rule); margin-top:14px; padding:26px 0 48px;
+  font-size:13px; color:var(--ink-3)}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width:840px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .hero{padding-top:36px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hero-stats div{padding:14px 16px 18px}
+  .hero-stats div:nth-child(2n){border-right:0}
+  .hero-stats div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}
+  .hero-stats div:nth-child(3){padding-left:0}
+  .hero-stats .l{min-height:2.6em}
+  .sec{padding:26px 20px 30px; border-radius:10px}
+  .sec-num{font-size:30px}
+  .kpis,.kpis.k3,.kpis.k6{grid-template-columns:repeat(2,1fr)}
+  .kpi{border-bottom:1px solid var(--rule)}
+  .kpi:nth-child(2n){border-right:0}
+  .tables.two{grid-template-columns:1fr}
+  .viz-slot{min-height:260px}
+  .prose p{text-align:left; hyphens:none}
+}
+
+/* ── Impresión ──────────────────────────────────────────────────── */
+@page{size:A4; margin:14mm}
+@media print{
+  html,body{background:#fff}
+  .nav{display:none!important}
+  .wrap{max-width:none; padding:0}
+  .hero{background:#fff; color:var(--ink); padding:0 0 8px; border-bottom:2px solid var(--ink)}
+  .hero .lede{color:var(--ink-2)}
+  .hero .eyebrow{color:var(--ink-3)}
+  .hero-stats{border-top:1px solid var(--rule)}
+  .hero-stats div{border-right:1px solid var(--rule)}
+  .hero-stats .l{color:var(--ink-3)}
+  .sec{border:0; padding:0; margin:0 0 18px; break-before:page; page-break-before:always}
+  .kpis,table,figure.viz,.nota{break-inside:avoid; page-break-inside:avoid}
+  .viz-slot{min-height:115mm}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Notas de mantenimiento (no se muestran):
+     · Cada gráfico tiene un recuadro guía. Para insertar el de Tableau Public (Compartir → Insertar código),
+       reemplazar el <div class="viz-ph">…</div> del <div class="viz-slot"> correspondiente por el bloque
+       <div class='tableauPlaceholder' ...>…</div>. El script de abajo carga la API de Tableau, dimensiona
+       los embeds y saca el recuadro guía. Si se pega también el <script> de Tableau, no pasa nada.
+     · Datos: G1_demanda_vs_estimacion_oct2026.xlsx (hoja Semanal) y G2_stock_titulos_2026.xlsx (hoja Mensual).
+     · Los gráficos se publican con Tamaño = Automático. El alto de cada caja es ancho × PROPORCION.
+     · Para imprimir o pasar a PDF, exportar cada gráfico como PNG y reemplazar el bloque por <img>.
+-->
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Reporte de Gestión Integral</p>
+    <h1>Octubre 2026</h1>
+    <p class="lede">Octubre fue el mes de menor demanda del año: repasamos cómo transitamos ese valle y qué tan bien lo anticipamos. En la otra punta, las solicitudes de títulos crecieron un 55&nbsp;% con la Colación como fecha límite, y aun así llegamos al acto con un nivel similar al de 2025.</p>
+    <div class="hero-stats">
+      <div><span class="l">Atenciones del mes</span><span class="v">7.163</span></div>
+      <div><span class="l">Sobreestimación de la demanda</span><span class="v">~31 %</span></div>
+      <div><span class="l">Títulos ingresados</span><span class="v">383</span></div>
+      <div><span class="l">Inscriptos con título listo</span><span class="v">94 %</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#demanda"><span class="i">01</span> Demanda y estimación</a>
+    <a href="#colacion"><span class="i">02</span> Títulos y Colación</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ═══════════════════════ 01 · DEMANDA Y ESTIMACIÓN ═══════════════════════ -->
+<section class="sec" id="demanda">
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <div>
+      <p class="kicker">Atención al alumno · Planificación</p>
+      <h2>Demanda baja y una estimación que no la acompañó</h2>
+    </div>
+  </div>
+  <p class="sec-lede">Bajaron casi todos los canales, y la estimación quedó por encima de la demanda real tanto en online como en sede.</p>
+
+  <div class="kpis">
+    <div class="kpi"><span class="l">Tickets online</span><span class="v">6.038</span><span class="n">Se estimaron 8.980 · sobreestimación del 33 %</span></div>
+    <div class="kpi"><span class="l">Atenciones presenciales</span><span class="v">1.125</span><span class="n">Se estimaron 1.407 · sobreestimación del 20 %</span></div>
+    <div class="kpi"><span class="l">Conversaciones del Agente IA</span><span class="v">1.398</span><span class="n">Mínimo del año · 15 % menos que en septiembre</span></div>
+    <div class="kpi"><span class="l">Desvíos registrados</span><span class="v down">62</span><span class="n">1,0 % de los tickets online · 0,6 % en septiembre</span></div>
+  </div>
+
+  <div class="prose">
+    <p>Octubre fue el mes de menor demanda del año: las atenciones presenciales fueron las más bajas desde marzo, y frente a octubre 2025 cayeron los pagos en cajas (<b>16&nbsp;%</b> menos), los trámites de PYGA (<b>16&nbsp;%</b>) y los reintegros (<b>52&nbsp;%</b>); las solicitudes en Tech Assistant bajaron un <b>14&nbsp;%</b> frente a septiembre. La estimación, que armamos antes de que empiece el mes, quedó lejos de la realidad, y la distancia creció semana a semana: en online la sobreestimación pasó del <b>23&nbsp;%</b> en la primera semana al <b>40&nbsp;%</b> en la cuarta; en sede, de una leve subestimación en la primera semana (<b>8&nbsp;%</b>, por el pico del lunes 5/10) a una sobreestimación del <b>36&nbsp;%</b>. Con esa proyección se planificó la estructura: RRHH asignó capacidad para <b>6.267</b> tickets sobre <b>5.746</b> proyectados, sin apoyo extra, y lo que sobró se usó en orden de sede, devoluciones de desempeño y capacitación (<b>375 actividades y 424,91 horas</b>).</p>
+    <p>Lo que no hicimos bien: la estimación partió de un volumen que el mes no tuvo, y en sede, en el único día pico (lunes 5/10), volvimos a quedarnos cortos. Tampoco aprovechamos la menor carga para mejorar la calidad: los desvíos subieron de <b>41</b> a <b>62</b> (50 por reaperturas y 12 no conformidades) y pasaron del <b>0,6&nbsp;%</b> al <b>1,0&nbsp;%</b> de los tickets online. El principal motivo fue la personalización de la respuesta (<b>29</b> de los 62), y la resolución automática del Agente IA bajó del <b>51&nbsp;%</b> al <b>46&nbsp;%</b>. Además, la proyección de RRHH para noviembre anticipaba una demanda igual de baja, y los primeros días hábiles promediaron <b>431</b> tickets online y <b>73</b> presenciales por día, contra <b>256</b> y <b>54</b> en octubre.</p>
+  </div>
+
+  <div class="tables">
+    <div class="tbl">
+      <h3>Tickets reales vs. estimados por semana calendario</h3>
+      <table>
+        <thead><tr><th>Semana</th><th class="n">Online real</th><th class="n">Online est.</th><th class="n">Estimación</th><th class="n">Presencial real</th><th class="n">Presencial est.</th><th class="n">Estimación</th></tr></thead>
+        <tbody>
+          <tr><td>S1 (1–7)</td><td class="n">1.644</td><td class="n">2.148</td><td class="n">Sobreestimó 23 %</td><td class="n">386</td><td class="n">357</td><td class="n">Subestimó 8 %</td></tr>
+          <tr><td>S2 (8–14)</td><td class="n">1.218</td><td class="n">1.746</td><td class="n">Sobreestimó 30 %</td><td class="n">203</td><td class="n">269</td><td class="n">Sobreestimó 25 %</td></tr>
+          <tr><td>S3 (15–21)</td><td class="n">1.343</td><td class="n">2.041</td><td class="n">Sobreestimó 34 %</td><td class="n">217</td><td class="n">296</td><td class="n">Sobreestimó 27 %</td></tr>
+          <tr><td>S4 (22–28)</td><td class="n">1.317</td><td class="n">2.212</td><td class="n">Sobreestimó 40 %</td><td class="n">221</td><td class="n">343</td><td class="n">Sobreestimó 36 %</td></tr>
+          <tr><td>S5 (29–31)</td><td class="n">516</td><td class="n">833</td><td class="n">Sobreestimó 38 %</td><td class="n">98</td><td class="n">142</td><td class="n">Sobreestimó 31 %</td></tr>
+          <tr class="total"><td>Total</td><td class="n">6.038</td><td class="n">8.980</td><td class="n">Sobreestimó 33 %</td><td class="n">1.125</td><td class="n">1.407</td><td class="n">Sobreestimó 20 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <figure class="viz">
+    <div class="viz-slot embed" data-viz="1">
+      <div class='tableauPlaceholder' id='viz1794931995571' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;OC&#47;OCT-1_17948781973680&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /><param name='embed_code_version' value='3' /><param name='site_root' value='' /><param name='name' value='OCT-1_17948781973680&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;OC&#47;OCT-1_17948781973680&#47;Dashboard1&#47;1.png' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /></object></div>
+    </div>
+    <figcaption><b>Gráfico 1.</b> Tickets reales y estimados por semana calendario, online y presencial, con la sobreestimación o subestimación de cada semana. Fuente: tickets creados por usuarios finales · atenciones presenciales · Estimación DA octubre 2026.</figcaption>
+  </figure>
+</section>
+
+<!-- ═══════════════════════ 02 · TÍTULOS Y COLACIÓN ═══════════════════════ -->
+<section class="sec" id="colacion">
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <div>
+      <p class="kicker">SAA · Entrega de Títulos · Tesorería</p>
+      <h2>Títulos: llegar a la 43.ª Colación con un 55&nbsp;% más de solicitudes</h2>
+    </div>
+  </div>
+  <p class="sec-lede">La Colación del 12 y 13 de noviembre (tres turnos, <b>979 egresados inscriptos</b>) ordenó el trabajo del mes. Llegamos con el mismo nivel que en 2025, pero también con errores propios que no deberían repetirse.</p>
+
+  <div class="kpis k6">
+    <div class="kpi"><span class="l">Títulos ingresados</span><span class="v">383</span><span class="n">+55 % vs. octubre 2025 (246)</span></div>
+    <div class="kpi"><span class="l">Stock en proceso al 31/10</span><span class="v">339</span><span class="n">104 al 30/9 · pico de 380 al 21/10</span></div>
+    <div class="kpi"><span class="l">Finalizados sin entregar</span><span class="v">919</span><span class="n">119 en enero · se concentran en el acto</span></div>
+    <div class="kpi"><span class="l">Trámites impresos</span><span class="v">286</span><span class="n">+105,8 % vs. septiembre · 80 % entre el 19 y el 30</span></div>
+    <div class="kpi"><span class="l">Reimpresiones</span><span class="v down">45</span><span class="n">+400 % · 22 de ellas el 22/10</span></div>
+    <div class="kpi"><span class="l">Inscriptos con título listo</span><span class="v up">94 %</span><span class="n">68 % entregado · 26 % finalizado</span></div>
+  </div>
+
+  <div class="prose">
+    <p>Las mesas de finales y los cierres de carrera empujaron las solicitudes a <b>383</b>, el segundo mes del año después de julio (<b>655</b>). Y el mes no arrancó de cero: primero hubo que regularizar «gestiones de títulos pendientes del mes anterior que habían superado el plazo de entrega». Con esa carga, la SAA priorizó «la emisión y control de los trámites correspondientes a quienes cumplían con los requisitos académicos y administrativos» para que llegaran al acto. El stock en proceso pasó de <b>104</b> a <b>380</b> títulos en tres semanas y cerró el mes en <b>339</b>, con <b>211</b> ya en los últimos niveles de validación (N5 y N6).</p>
+    <p>Se finalizaron <b>116</b> títulos (<b>390</b> en septiembre) y la mediana entre el ingreso y la finalización bajó de <b>52</b> a <b>37,5</b> días. La impresión se concentró al final: el <b>80&nbsp;%</b> de los trámites se imprimió entre el 19 y el 30. Ese pico trajo reimpresiones evitables en los días de más presión: <b>45</b> en el mes, <b>22</b> de ellas el 22/10, casi todas por errores de forma (espacios, fuentes, nombres, firmas). El área propone «mejorar los criterios de impresión de la manera más clara posible para el equipo». Tesorería cerró la cadena y dejó todos los títulos preparados para el acto.</p>
+  </div>
+
+  <figure class="viz">
+    <div class="viz-slot embed" data-viz="2">
+      <div class='tableauPlaceholder' id='viz1794931975173' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Oc&#47;Oct-2&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /><param name='embed_code_version' value='3' /><param name='site_root' value='' /><param name='name' value='Oct-2&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Oc&#47;Oct-2&#47;Dashboard1&#47;1.png' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /></object></div>
+    </div>
+    <figcaption><b>Gráfico 2.</b> Títulos ingresados por mes (barras) y stock a fin de mes en proceso y finalizado sin entregar (líneas). Fuente: pasos de trámites (ID 10).</figcaption>
+  </figure>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Reporte de Gestión Integral · Octubre 2026</span>
+    <span>Fuentes: informes de área · tickets y atenciones · Estimación DA · pasos de trámites</span>
+  </div>
+</footer>
+
+<script>
+/* 1. El recuadro guía desaparece solo cuando hay un embed (o un <img>) dentro del slot,
+      y el slot pasa al formato de gráfico insertado. */
+document.querySelectorAll('.viz-slot').forEach(function(slot){
+  var ph = slot.querySelector(':scope > .viz-ph');
+  if(!ph) return;
+  var otros = Array.prototype.filter.call(slot.children, function(el){ return el !== ph; });
+  if(otros.length){ ph.remove(); slot.classList.add('embed'); }
+});
+
+/* 2. Embeds de Tableau Public (código de inserción estándar, viz_v1.js).
+      Los cuatro gráficos están publicados con Tamaño = Automático, así que se adaptan a la caja:
+      ancho completo y alto proporcional al ancho, para que entren el gráfico y la leyenda sin scroll. */
+(function(){
+  var PROPORCION = 0.62;   /* alto = ancho × PROPORCION */
+  var BARRA = 27;          /* barra de herramientas de Tableau */
+  var ALTO_MIN = 420;
+  var activos = [];
+
+  function fijar(el, prop, val){ el.style.setProperty(prop, val, 'important'); }
+
+  function dimensionar(){
+    activos.forEach(function(v){
+      var w = v.div.offsetWidth;
+      if(!w) return;
+      var h = Math.max(ALTO_MIN, Math.round(w * PROPORCION) + BARRA);
+      fijar(v.obj, 'width', '100%');
+      fijar(v.obj, 'height', h + 'px');
+      var f = v.div.querySelector('iframe');
+      if(f){ fijar(f, 'width', '100%'); fijar(f, 'height', h + 'px'); }
+    });
+  }
+
+  document.querySelectorAll('.viz-slot .tableauPlaceholder').forEach(function(div){
+    var obj = div.getElementsByTagName('object')[0];
+    if(obj) activos.push({div:div, obj:obj});
+  });
+  if(!activos.length) return;
+  dimensionar();
+
+  if(!document.querySelector('script[src*="public.tableau.com/javascripts/api/viz_v1.js"]')){
+    var s = document.createElement('script');
+    s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    document.body.appendChild(s);
+  }
+
+  var t;
+  window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(dimensionar, 200); });
+  window.addEventListener('load', function(){ setTimeout(dimensionar, 1500); });
+})();
+
+/* 3. Resaltado de la sección activa en la barra de navegación. */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function marcar(i){ links.forEach(function(a,j){ a.classList.toggle('on', i===j); }); }
+  marcar(0);
+  if(!('IntersectionObserver' in window)) return;
+  var visibles = {};
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){ visibles[e.target.id] = e.isIntersecting; });
+    for(var i=0;i<secs.length;i++){ if(secs[i] && visibles[secs[i].id]){ marcar(i); return; } }
+  }, {rootMargin:'-25% 0px -60% 0px'});
+  secs.forEach(function(s){ if(s) io.observe(s); });
+})();
+</script>
+</body>
+</html>
